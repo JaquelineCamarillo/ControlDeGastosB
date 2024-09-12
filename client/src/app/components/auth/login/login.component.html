@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="title">
+        <h1>Inicia Sesión</h1>
+      </div>
+      <nav>
+        <ul>
+          <li class="left"><a routerLink="/home">Control de Gastos</a></li>
+          <li class="right"><a routerLink="/registrarse">Registrarse</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-content">
+      <div *ngIf="notificationMessage" class="notification">
+        {{ notificationMessage }} <i class="fas fa-check"></i>
+      </div>
+      <form class="form-container" (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm" novalidate>
+        <h1>Inicia Sesión</h1>
+        <div class="form-group">
+          <div class="form-floating">
+            <input type="text" class="form-control" id="exampleInputUser" placeholder=" " name="username" ngModel required>
+            <label for="exampleInputUser">Usuario</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-floating">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder=" " name="password" ngModel required>
+            <label for="exampleInputPassword1">Contraseña</label>
+          </div>
+        </div>
+        <button type="submit" class="custom-btn custom-btn-primary">Entrar</button>
+        <div class="error-message" *ngIf="errorMessage">
+          <i class="fas fa-exclamation-circle"></i> {{ errorMessage }}
+        </div>
+        <div class="links-container">
+          <h5><a routerLink="/registrarse">Registrarse</a></h5>
+          <h5><a routerLink="/recuperar-contrasena">Olvidé mi contraseña</a></h5>
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

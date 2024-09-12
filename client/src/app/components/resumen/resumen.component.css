@@ -1,0 +1,287 @@
+.container h1 {
+    font-family: sans-serif;
+  }
+  
+  .left {
+    font-family: sans-serif;
+    margin-left: 0%;
+  }
+  
+  .right {
+    font-family: sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .header {
+    background-color: #4a4657;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header nav ul li.right a i {
+    margin-right: 5px;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .title {
+    background-color: #3c374e;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .header nav {
+    background-color: #4a4657;
+    width: 100%;
+  }
+  
+  .header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 10px 20px;
+  }
+  
+  .header nav ul li.left {
+    margin-right: auto;
+  }
+  
+  .header nav ul li.right {
+    margin-left: 20px;
+  }
+  
+  .header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 600;
+  }
+  
+  .main-content {
+    background-color: #f1edec;
+    background-image: url('/assets/FondoR.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .main-content .white-container {
+    background-color: #fff2cc;
+    padding: 20px;
+    border-radius: 5px; 
+    box-shadow: 13px 13px 23px rgba(0, 0, 0, 0.5);
+    border: 2px solid #262f57;
+    background: rgba(100, 247, 247, 0.356); 
+    backdrop-filter: blur(10px);
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .main-content h2 {
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  .main-content h1 {
+    color: #fff;
+    font-family: sans-serif;
+  }
+  
+  .expenses-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+    border-radius: 25px;
+    align-items: center;
+  }
+  
+  .expenses-table th, .expenses-table td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .expenses-table th {
+    background-color: #49454f;
+    color: white;
+  }
+  
+  .expenses-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  .expenses-table tbody tr:nth-child(even) {
+    background-color: #e5e5e5;
+  }
+  
+  .button_descargar {
+    font-family: sans-serif;
+    padding: 8px 15px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 20px;
+    background-color: #270d0a8e;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: medium;
+    color: #fff2cc;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 80%;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .button_descargar {
+    background-color: #00000094;
+  }
+  
+  .filter-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+  }
+  
+  .button_filter {
+    font-family: sans-serif;
+    padding: 8px 15px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #270d0a8e;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: medium;
+    color: #fff2cc;
+  }
+  
+  .filter-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .filter-dropdown .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .filter-dropdown .dropdown-content a:hover {
+    background-color: #8b8b8b;
+  }
+  
+  .filter-dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .filter-dropdown:hover .button_filter {
+    background-color: #00000094;
+  }
+  
+  /* Nuevos estilos para el filtro por tipo */
+  .type-filter-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px; /* Ajusta la separación según sea necesario */
+  }
+  
+  .type-filter-dropdown .button_filter {
+    font-family: sans-serif;
+    padding: 8px 15px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #270d0a8e;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: medium;
+    color: #fff2cc;
+  }
+  
+  .type-filter-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .type-filter-dropdown .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .type-filter-dropdown .dropdown-content a:hover {
+    background-color: #8b8b8b;
+  }
+  
+  .type-filter-dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .type-filter-dropdown:hover .button_filter {
+    background-color: #00000094;
+  }
+  

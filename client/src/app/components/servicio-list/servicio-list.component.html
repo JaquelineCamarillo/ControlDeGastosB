@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <body>
+        <div class="container">
+            <header class="header">
+                <div class="title">
+                    <h1>Listado</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li class="left"><a routerLink="/inicio-usuario">Control de Gastos</a></li>
+                        <li class="right"><a routerLink="/servicios/add" routerLinkActive="active"><i class="fas fa-plus"></i> Crear Servicio</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main class="main-content">
+                <div *ngIf="notificationMessage" class="notification">
+                    {{ notificationMessage }} <i class="fas fa-check"></i>
+                </div>
+                <div class="floating-window">
+                    <li class="left" *ngFor="let presupuesto of presupuestos">
+                        <a>Presupuesto actual: ${{ presupuesto.PresupuestoActual }}</a>
+                    </li>
+                </div>
+                <h1>Lista de servicios</h1>
+                <div class="white-container">
+                    <table class="expenses-table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Cliente</th>
+                                <th>Estado</th>
+                                <th>Monto</th>
+                                <th>Fecha de servicio</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let servicio of servicios">
+                                <td>{{ servicio.Producto }}</td>
+                                <td>{{ servicio.Cantidad }}</td>
+                                <td>{{ servicio.Cliente }}</td>
+                                <td>{{ servicio.Estado }}</td>
+                                <td>$ {{ servicio.Monto }}</td>
+                                <td>{{ servicio.FechaServicio | date }}</td>
+                                <td>
+                                    <button class="edit-button" (click)="editServicio(servicio.IdServicio)"><i class="fas fa-edit"></i></button> 
+                                    <button class="delete-button" (click)="deleteServicio(servicio.IdServicio)" ><i class="fas fa-trash-alt"></i></button>
+                                </td>                            
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>          
+        </div>
+    </body>
+    </html>

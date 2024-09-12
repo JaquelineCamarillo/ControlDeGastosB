@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="title">
+                <h1>Registrarse</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="left"><a routerLink="/">Control de Gastos</a></li>
+                    <li class="right"><a routerLink="/login">Inicia Sesión</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main-content">
+            <div class="container">
+                <h1>Crear cuenta</h1>
+                <form id="registroForm" class="form-grid" (ngSubmit)="saveNewUsuario()">
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="text" id="nombre" name="nombre" placeholder=" " required [(ngModel)]="usuario.Nombre">
+                            <label for="nombre">Nombre(s)</label>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['Nombre']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['Nombre'] }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="text" id="apellidoPaterno" name="apellidoPaterno" placeholder=" " required [(ngModel)]="usuario.ApPaterno">
+                            <label for="apellidoPaterno">Apellido Paterno</label>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['ApPaterno']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['ApPaterno'] }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="text" id="apellidoMaterno" name="apellidoMaterno" placeholder=" " required [(ngModel)]="usuario.ApMaterno">
+                            <label for="apellidoMaterno">Apellido Materno</label>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['ApMaterno']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['ApMaterno'] }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="text" id="telefono" name="telefono" pattern="[0-9]{1,}" title="Ingresa solo números" placeholder=" " required [(ngModel)]="usuario.NumTelefono">
+                            <label for="telefono">Num. Teléfono</label>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['NumTelefono']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['NumTelefono'] }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="email" id="correo" name="correo" placeholder=" " required [(ngModel)]="usuario.Correo">
+                            <label for="correo">Correo Electrónico</label>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['Correo']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['Correo'] }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="date" id="fechaNacimiento" name="fechaNacimiento" placeholder=" " required [(ngModel)]="usuario.FechaNacimiento">
+                            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['FechaNacimiento']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['FechaNacimiento'] }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="text" id="usuario" name="usuario" placeholder=" " required [(ngModel)]="usuario.Usuario">
+                            <label for="usuario">Crear Usuario</label>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['Usuario']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['Usuario'] }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="password" id="contrasena" name="contrasena" placeholder=" " required [(ngModel)]="usuario.Contrasena">
+                            <label for="contrasena">Crear Contraseña</label>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['Contrasena']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['Contrasena'] }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="password" id="confirmarContrasena" name="confirmarContrasena" placeholder=" " required [(ngModel)]="confirmarContrasena">
+                            <label for="confirmarContrasena">Confirma Contraseña</label>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['ConfirmarContrasena']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['ConfirmarContrasena'] }}
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i></button>
+                </form>
+            </div>
+        </main>
+    </div>    
+</body>
+</html>

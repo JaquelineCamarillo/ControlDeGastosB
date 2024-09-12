@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="title">
+          <h1>Listado</h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="left"><a routerLink="/inicio-usuario">Control de Gastos</a></li>
+            <li class="right"><a routerLink="/gastos/add" routerLinkActive="active"><i class="fas fa-plus"></i> Crear Gasto</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main class="main-content">
+        <div *ngIf="notificationMessage" class="notification">
+          {{ notificationMessage }} <i class="fas fa-check"></i>
+        </div>
+        <div class="floating-window">
+          <li class="left" *ngFor="let presupuesto of presupuestos">
+              <a>Presupuesto actual: ${{ presupuesto.PresupuestoActual }}</a>
+          </li>
+        </div>
+        <h1>Lista de Gastos</h1>
+        <div class="white-container">
+          <table class="expenses-table">
+            <thead>
+              <tr>
+                <th>Descripcion</th>
+                <th>Categoria</th>
+                <th>Monto</th>
+                <th>Fecha de transaccion</th>
+                <th>Metodo de Pago</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let gasto of gastos">
+                <td>{{ gasto.Descripcion }}</td>
+                <td>{{ gasto.Categoria }}</td>
+                <td>$ {{ gasto.Monto }}</td>
+                <td>{{ gasto.FechaTransaccion | date }}</td>
+                <td>{{ gasto.MetodoPago }}</td>
+                <td>
+                  <button class="edit-button" (click)="editGasto(gasto.IdGasto)"><i class="fas fa-edit"></i></button>
+                  <button class="delete-button" (click)="deleteGasto(gasto.IdGasto)"><i class="fas fa-trash-alt"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="title">
+                <h1>Registrar Gasto</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="left"><a href="/inicio-usuario">Control de Gastos</a></li>
+                    <li class="right"><a routerLink="/gastos/list">Mis gastos</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main-content">
+            <div class="container">
+                <form id="registroForm" class="form-grid" (ngSubmit)="saveGasto()">
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="text" id="Descripcion" name="Descripcion" placeholder=" " required [(ngModel)]="gasto.Descripcion">
+                            <label for="Descripcion">Descripción</label>
+                            <span class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip">Detalles sobre qué compraste o pagaste.</span>
+                            </span>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['Descripcion']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['Descripcion'] }}
+                        </div>
+                    </div>             
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <select id="Categoria" name="Categoria" [(ngModel)]="gasto.Categoria" required>
+                                <option value="">Seleccione una categoría</option>
+                                <option value="Servicio">Servicio</option>
+                                <option value="Subscripción">Subscripción</option>
+                                <option value="Inversión">Inversión</option>
+                                <option value="Gasto Personal">Gasto Personal</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                            <label for="Categoria">Categoría</label>
+                            <span class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip">Ingrese la categoría correspondiente al gasto.</span>
+                            </span>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['Categoria']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['Categoria'] }}
+                        </div>
+                    </div>             
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="number" id="Monto" name="Monto" placeholder=" " required [(ngModel)]="gasto.Monto">
+                            <label for="Monto">Monto</label>
+                            <span class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip">La cantidad exacta gastada.</span>
+                            </span>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['Monto']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['Monto'] }}
+                        </div>
+                    </div>              
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="date" id="FechaTransaccion" name="FechaTransaccion" placeholder=" " required [(ngModel)]="gasto.FechaTransaccion" readonly>
+                            <label for="FechaTransaccion">Fecha de transacción</label>
+                            <span class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip">Clasifica el tipo de gasto para entender mejor en qué áreas se gasta más.</span>
+                            </span>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['FechaTransaccion']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['FechaTransaccion'] }}
+                        </div>
+                    </div>              
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <select id="MetodoPago" name="MetodoPago" [(ngModel)]="gasto.MetodoPago" required>
+                                <option value="">Seleccione un método</option>
+                                <option value="Tarjeta de Débito">Tarjeta de Débito</option>
+                                <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+                                <option value="Efectivo">Efectivo</option>
+                                <option value="PayPal">PayPal</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                            <label for="MetodoPago">Método de pago</label>
+                            <span class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip">Registra cómo se realizó el pago.</span>
+                            </span>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['MetodoPago']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['MetodoPago'] }}
+                        </div>
+                    </div>              
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="file" id="foto" name="foto" class="file-input">
+                            <label for="foto">Comprobante gasto</label>
+                            <span class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip">Adjunta una foto del recibo o del gasto.</span>
+                            </span>
+                        </div>
+                    </div>              
+                    <div class="error-message" *ngIf="errorMessages['general']">
+                        <i class="fas fa-exclamation-circle"></i> {{ errorMessages['general'] }}
+                    </div>              
+                    <button type="submit"><i class="fas fa-check"></i> Guardar</button>
+                </form>                              
+            </div>
+        </main>   
+    </div>
+</body>
+</html>

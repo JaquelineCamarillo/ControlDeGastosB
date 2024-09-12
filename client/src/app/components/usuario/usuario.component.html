@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="title">
+                <h1>Perfil de Usuario</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="left"><a routerLink="/inicio-usuario">Control de Gastos</a></li>
+                    <li class="right"><a routerLink="/inicio-usuario">Regresar</a></li>
+                    <li class="right"><a routerLink="/home">Cerrar sesión</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main-content">
+            <section class="seccion-perfil-usuario">
+                <div class="perfil-usuario-header">
+                    <div class="perfil-usuario-portada">
+                        <div class="perfil-usuario-avatar">
+                            <!-- Enlaza la imagen del usuario -->
+                            <img [src]="usuario?.avatarUrl || 'https://image.freepik.com/icones-gratis/usuario-icone-do-perfil_318-33925.jpg'" alt="img-avatar">
+                        </div>
+                    </div>
+                </div>
+                <div class="perfil-usuario-body">
+                    <div class="perfil-usuario-bio">
+                        <!-- Enlaza el nombre y la biografía del usuario -->
+                        <h3 class="titulo">{{ usuario.Nombre + ' ' + usuario.ApPaterno + ' ' + usuario.ApMaterno|| 'Nombre del Usuario' }}</h3>
+                        
+                    </div>
+                    <div class="perfil-usuario-footer">
+                        <ul class="lista-datos">
+                            <li><i class="icono fas fa-map-signs"></i> Direccion de usuario: {{ usuario.Correo || 'No disponible' }}</li>
+                            <li><i class="icono fas fa-phone-alt"></i> Telefono: {{ usuario.NumTelefono || 'No disponible' }}</li>
+                        </ul>
+                        <ul class="lista-datos">
+                            <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento: {{ usuario.FechaNacimiento || 'No disponible' }}</li>
+                            <li><i class="icono fas fa-user"></i>Usuario: {{ usuario.Usuario || 'No disponible' }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

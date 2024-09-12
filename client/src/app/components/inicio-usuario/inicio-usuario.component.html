@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="title">
+                <h1>Bienvenido</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="left">
+                        <a routerLink="/inicio-usuario">Control de Gastos</a>
+                    </li>
+                    <li class="right">
+                        <a routerLink="/inicio-usuario">
+                            <i class="fas fa-headset"></i>
+                            <span class="tooltip">Soporte Técnico</span>
+                        </a>
+                    </li>
+                    <li class="right">
+                        <a routerLink="/resumen">
+                            <i class="fas fa-file-alt"></i>
+                            <span class="tooltip">Resumen</span>
+                        </a>
+                    </li>
+                    <li class="right">
+                        <a routerLink="/home">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span class="tooltip">Cerrar Sesión</span>
+                        </a>
+                    </li>
+                    <li class="right">
+                        <a routerLink="/usuario">
+                            <i class="fas fa-user"></i>
+                            Usuario
+                        </a>
+                    </li>
+                </ul>                
+            </nav>
+            <div class="info-container">
+                <div class="floating-window">
+                    <li class="left" *ngFor="let presupuesto of presupuestos">
+                        <a>Presupuesto total: ${{ presupuesto.PresupuestoTotal }}</a>
+                    </li>
+                </div>
+                <div class="floating-window">
+                    <li class="left" *ngFor="let presupuesto of presupuestos">
+                        <a>Presupuesto actual: ${{ presupuesto.PresupuestoActual }}</a>
+                    </li>
+                </div>
+            </div>                        
+        </header>       
+        <main class="main-content">
+            <section class="gastos">
+                <div class="card">
+                    <div class="face front">
+                        <img src="/assets/F1.jpg" alt="">
+                        <h3>Gastos</h3>
+                    </div>
+                    <div class="face back">
+                        <h2>Gasto</h2>
+                        <p>
+                            Aquí puedes registrar y seguir todas 
+                            las salidas de dinero, 
+                            como compras y pagos. 
+                            Esto te ayuda a controlar y analizar 
+                            cómo usas tus recursos financieros.
+                        </p>
+                        <div class="enlace">
+                            <a routerLink="/gastos/list">Ver mis gastos...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face front">
+                        <img src="/assets/F2.jpg" alt="">
+                        <h3>Ingresos</h3>
+                    </div>
+                    <div class="face back">
+                        <h2>Ingreso</h2>
+                        <p>
+                            Registra todas las entradas de dinero, 
+                            como las ventas de productos personalizados. 
+                            Esto te permite seguir el flujo de caja y 
+                            evaluar el rendimiento de tus ventas.
+                        </p>
+                        <div class="enlace">
+                            <a routerLink="/ingresos/list">Ver ingresos...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face front">
+                        <img src="/assets/F3.jpg" alt="">
+                        <h3>Servicios</h3>
+                    </div>
+                    <div class="face back">
+                        <h2>Servicio</h2>
+                        <p>
+                            Administra todos los servicios que 
+                            has contratado, como el mantenimiento 
+                            del equipo y las suscripciones a 
+                            herramientas de diseño. Esto te 
+                            ayuda a mantener un seguimiento 
+                            detallado de proveedores y costos.
+                        </p>
+                        <div class="enlace">
+                            <a routerLink="/servicios/list">Ver mis servicios...</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="title">
+                <h1>Ingresar</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="left"><a routerLink="/inicio-usuario">Control de Gastos</a></li>
+                    <li class="right"><a routerLink="/servicios/list">Mis Servicios</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main-content">
+            <div class="container">
+                <form id="registroForm" class="form-grid" (ngSubmit)="saveServicio()">
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <select id="producto" name="producto" [(ngModel)]="servicio.Producto" required>
+                                <option value="" disabled selected>Selecciona producto</option>
+                                <option value="Vaso(s)">Vaso(s)</option>
+                                <option value="Taza(s)">Taza(s)</option>
+                                <option value="Termo(s)">Termo(s)</option>
+                                <option value="Tarro(s)">Tarro(s)</option>
+                                <option value="Estampa(s)">Estampa(s)</option>
+                                <option value="Caja(s)">Caja(s)</option>
+                                <option value="Etiqueta(s)">Etiqueta(s)</option>
+                                <option value="Botella(s) decorada">Botella(s) decorada</option>
+                                <option value="Lona(s)">Lona(s)</option>
+                                <option value="Letra(s)">Letra(s)</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                            <label for="producto">Producto
+                            </label>
+                            <span class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip">Selecciona el producto.</span>
+                            </span>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['Producto']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['Producto'] }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="number" id="cantidad" name="cantidad" placeholder=" " required [(ngModel)]="servicio.Cantidad">
+                            <label for="cantidad">Cantidad
+                            </label>
+                            <span class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip">Cantidad de productos.</span>
+                            </span>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['Cantidad']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['Cantidad'] }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="text" id="cliente" name="cliente" placeholder=" " required [(ngModel)]="servicio.Cliente">
+                            <label for="cliente">Cliente
+                            </label>
+                            <span class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip">Nombre del cliente.</span>
+                            </span>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['Cliente']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['Cliente'] }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <select id="estado" name="estado" [(ngModel)]="servicio.Estado" required>
+                                <option value="" disabled selected>Selecciona estado</option>
+                                <option value="Liquidado">Liquidado</option>
+                                <option value="Saldo pendiente">Saldo pendiente</option>
+                                <option value="Deuda">Deuda</option>
+                            </select>
+                            <label for="estado">Estado
+                            </label>
+                            <span class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip">Estado actual del servicio.</span>
+                            </span>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['Estado']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['Estado'] }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="number" id="monto" name="monto" placeholder=" " required [(ngModel)]="servicio.Monto">
+                            <label for="monto">Monto
+                            </label>
+                            <span class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip">Costo del servicio.</span>
+                            </span>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['Monto']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['Monto'] }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="date" id="fechaServicio" name="fechaServicio" placeholder=" " required [(ngModel)]="servicio.FechaServicio" readonly>
+                            <label for="fechaServicio">Fecha de servicio
+                            </label>
+                            <span class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip">Fecha en que se realizó el servicio.</span>
+                            </span>
+                        </div>
+                        <div class="error-message" *ngIf="errorMessages['FechaServicio']">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessages['FechaServicio'] }}
+                        </div>
+                    </div>
+                    <button type="submit"><i class="fas fa-check"></i></button>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
