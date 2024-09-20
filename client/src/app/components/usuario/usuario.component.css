@@ -32,7 +32,12 @@ body {
 }
 
 .title {
-    background-color: #3c374e;
+    background: linear-gradient(5deg, 
+    #D8C751,  /* Dorado claro */
+    #C1A60F,  /* Dorado brillante */
+    #B09118,  /* Dorado más oscuro */
+    #F9F772,
+    #9C7215);
     width: 100%;
     text-align: center;
     padding: 10px 0;
