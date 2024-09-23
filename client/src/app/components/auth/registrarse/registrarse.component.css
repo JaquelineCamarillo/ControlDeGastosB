@@ -23,22 +23,27 @@ body {
 }
 
 .header {
-    background-color: #4a4657;
-    color: white;
+    background-color: #9C7215;
+    color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .title {
-    background-color: #3c374e;
+    background: linear-gradient(5deg, 
+    #D8C751,  /* Dorado claro */
+    #C1A60F,  /* Dorado brillante */
+    #B09118,  /* Dorado más oscuro */
+    #F9F772,
+    #9C7215);
     width: 100%;
     text-align: center;
     padding: 10px 0;
 }
 
 .header nav {
-    background-color: #4a4657;
+    background-color: #9C7215;
     width: 100%;
 }
 
@@ -59,14 +64,14 @@ body {
 }
 
 .header nav ul li a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-weight: 600;
 }
 
 .main-content {
-    background-color: #f1edec;
-    background-image: url('/assets/FondoPagina.jpg');
+    background-color: #9C7215;
+    background-image: url('/assets/RegistroF.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -89,11 +94,11 @@ body {
     margin-top: 20px;
     padding: 30px;
     border-radius: 6px;
-    border: 2px solid #1f1a35;
+    border: 2px solid #9C7215;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    background-color: #fff2cc;
+    background-color: #9C7215;
     background: transparent;
     backdrop-filter: blur(10px);
     box-shadow: 13px 13px 23px rgba(0, 0, 0, 0.5);
@@ -111,13 +116,13 @@ body {
 .form-floating input {
     width: 250px;
     padding: 10px;
-    border: 3px solid #eeeaea;
+    border: 3px solid #9C7215;
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 15px;
     font-family: sans-serif;
     background-color: transparent;
-    color: #000;
+    color: #D8C751;
     box-shadow: none;
     transition: all 0.2s ease;
 }
@@ -127,7 +132,7 @@ body {
     top: 10px;
     left: 10px;
     font-size: 15px;
-    color: #3b3838;
+    color: #D8C751;
     pointer-events: none;
     transition: all 0.2s ease;
 }
@@ -147,7 +152,7 @@ body {
 
 button {
     grid-column: span 3;
-    background-color: #424144;
+    background-color: #9C7215;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
@@ -162,7 +167,7 @@ button a {
 }
 
 button:hover {
-    background-color: #79787c;
+    background-color: #D8C751;
 }
 
 .links-container {

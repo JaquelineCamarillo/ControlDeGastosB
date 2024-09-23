@@ -23,8 +23,8 @@ body {
 }
 
 .header {
-    background-color: #4a4657;
-    color: white;
+    background-color:#9C7215;
+    color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,7 +43,7 @@ body {
 }
 
 .header nav {
-    background-color: #4a4657;
+    background-color: #9C7215;
     width: 100%;
 }
 
@@ -64,14 +64,14 @@ body {
 }
 
 .header nav ul li a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-weight:600;
 }
 
 .main-content {
     background-color: #f1edec;
-    background-image:url('/assets/dinero.png') ;
+    background-image:url('/assets/FondoInicio.jpg') ;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -89,14 +89,14 @@ body {
 }
 
 .main-content h4{
-    color:#3c374e;
+    color:#9C7215;
     font-family: sans-serif;
 }
 
 .image-container {
     width: 60%;
     height: 300px;
-    border: 2px solid #262f57;
+    border: 2px solid #9C7215;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -152,7 +152,7 @@ body {
     margin-left: 10px;
     height: 200px;
     background-color: #e7d090;
-    border: 2px solid #262f57;
+    border: 2px solid #9C7215;
     flex: 1;
     transition: .3s all ease;
     display: flex;
