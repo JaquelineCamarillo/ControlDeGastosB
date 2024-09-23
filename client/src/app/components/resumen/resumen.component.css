@@ -23,8 +23,8 @@
   }
   
   .header {
-    background-color: #4a4657;
-    color: white;
+    background-color: #9C7215;
+    color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,14 +37,19 @@
   }
   
   .title {
-    background-color: #3c374e;
+    background: linear-gradient(5deg, 
+    #D8C751,  /* Dorado claro */
+    #C1A60F,  /* Dorado brillante */
+    #B09118,  /* Dorado más oscuro */
+    #F9F772,
+    #9C7215);
     width: 100%;
     text-align: center;
     padding: 10px 0;
   }
   
   .header nav {
-    background-color: #4a4657;
+    background-color: #9C7215;
     width: 100%;
   }
   
@@ -65,7 +70,7 @@
   }
   
   .header nav ul li a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-family: sans-serif;
     font-weight: 600;
@@ -73,7 +78,7 @@
   
   .main-content {
     background-color: #f1edec;
-    background-image: url('/assets/FondoR.jpg');
+    background-image: url('/assets/resumen.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -90,8 +95,8 @@
     padding: 20px;
     border-radius: 5px; 
     box-shadow: 13px 13px 23px rgba(0, 0, 0, 0.5);
-    border: 2px solid #262f57;
-    background: rgba(100, 247, 247, 0.356); 
+    border: 2px solid #D8C751;
+    background: rgba(201, 187, 29, 0.286); 
     backdrop-filter: blur(10px);
     width: 90%;
     margin: 0 auto;
@@ -117,22 +122,23 @@
   }
   
   .expenses-table th, .expenses-table td {
-    border: 1px solid black;
+    border: 1px solid #9C7215;
     padding: 10px;
     text-align: center;
   }
   
   .expenses-table th {
-    background-color: #49454f;
-    color: white;
+    background-color: #9C7215;
+    color: rgb(0, 0, 0);
   }
   
   .expenses-table tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
+    background-color: #000000;
+    color: white;
   }
   
   .expenses-table tbody tr:nth-child(even) {
-    background-color: #e5e5e5;
+    background-color: #D8C751;
   }
   
   .button_descargar {
