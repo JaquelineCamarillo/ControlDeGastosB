@@ -1,19 +1,19 @@
 .container h1 {
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
 }
 
 .left {
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
     margin-left: 0%;
 }
 
 .right {
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
 }
 
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
     overflow-x: hidden;
 }
 
@@ -243,7 +243,7 @@ li {
     margin-left: -60px; 
     opacity: 0;
     transition: opacity 0.3s;
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
     font-size: small;
 }
 
@@ -281,7 +281,7 @@ li:hover .tooltip {
     width: 230px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: white;
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
     font-size: 18px;
     margin-right: 10px; 
     z-index: 10; 
