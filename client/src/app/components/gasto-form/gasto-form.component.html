@@ -97,21 +97,11 @@
                         <div class="error-message" *ngIf="errorMessages['MetodoPago']">
                             <i class="fas fa-exclamation-circle"></i> {{ errorMessages['MetodoPago'] }}
                         </div>
-                    </div>              
-                    <div class="form-group">
-                        <div class="form-floating">
-                            <input type="file" id="foto" name="foto" class="file-input">
-                            <label for="foto">Comprobante gasto</label>
-                            <span class="info-icon">
-                                <i class="fas fa-info-circle"></i>
-                                <span class="tooltip">Adjunta una foto del recibo o del gasto.</span>
-                            </span>
-                        </div>
-                    </div>              
+                    </div>                        
                     <div class="error-message" *ngIf="errorMessages['general']">
                         <i class="fas fa-exclamation-circle"></i> {{ errorMessages['general'] }}
                     </div>              
-                    <button type="submit"><i class="fas fa-check"></i> Guardar</button>
+                    <button type="submit"><i class="fas fa-save"> Guardar</i></button>
                 </form>                              
             </div>
         </main>   
