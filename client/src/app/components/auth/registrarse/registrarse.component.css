@@ -1,19 +1,19 @@
 .container h1 {
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
 }
 
 .left {
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
     margin-left: 0%;
 }
 
 .right {
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
 }
 
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
 }
 
 .container {
@@ -120,7 +120,7 @@ body {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 15px;
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
     background-color: transparent;
     color: #D8C751;
     box-shadow: none;
@@ -179,7 +179,7 @@ button:hover {
 
 .links-container h5 {
     margin: 0;
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
 }
 
 .links-container h5 a {

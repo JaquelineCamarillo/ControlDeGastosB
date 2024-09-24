@@ -21,38 +21,14 @@ class UsuarioController {
             res.json({ usuarios });
         });
     }
-    isCorreoExists(correo) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const result = yield database_1.default.query('SELECT * FROM Usuario WHERE Correo = ?', [correo]);
-            return result.length > 0;
-        });
-    }
-    isUsuarioExists(usuario) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const result = yield database_1.default.query('SELECT * FROM Usuario WHERE Usuario = ?', [usuario]);
-            return result.length > 0;
-        });
-    }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const { Correo, Usuario } = req.body;
-                // Verificar si el correo ya está registrado
-                if (yield this.isCorreoExists(Correo)) {
-                    res.status(400).json({ error: 'Correo electrónico ya registrado' });
-                    return;
-                }
-                // Verificar si el nombre de usuario ya está registrado
-                if (yield this.isUsuarioExists(Usuario)) {
-                    res.status(400).json({ error: 'Nombre de usuario ya registrado' });
-                    return;
-                }
-                // Si las verificaciones pasan, insertar el nuevo usuario
-                yield database_1.default.query('INSERT INTO Usuario SET ?', [req.body]);
-                res.json({ message: 'Usuario guardado' });
+                console.log(req.body);
+                yield database_1.default.query('INSERT INTO Usuario set ?', [req.body]);
+                res.json({ message: 'User Saved' });
             }
             catch (err) {
-                console.error(err);
                 res.status(500).json({ error: 'Error al crear usuario' });
             }
         });
@@ -61,14 +37,14 @@ class UsuarioController {
         return __awaiter(this, void 0, void 0, function* () {
             const { idUser } = req.params;
             yield database_1.default.query('DELETE FROM Usuario WHERE IdUsuario = ?', [idUser]);
-            res.json({ message: 'Usuario eliminado' });
+            res.json({ message: 'The user was deleted' });
         });
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { idUser } = req.params;
-            yield database_1.default.query('UPDATE Usuario SET ? WHERE IdUsuario = ?', [req.body, idUser]);
-            res.json({ message: 'Usuario actualizado' });
+            yield database_1.default.query('UPDATE Usuario set ? WHERE IdUsuario = ?', [req.body, idUser]);
+            res.json({ message: 'The user was updated' });
         });
     }
     getOne(req, res) {
@@ -79,7 +55,7 @@ class UsuarioController {
                 res.json(usuario[0]);
             }
             else {
-                res.status(404).json({ message: 'Usuario no encontrado' });
+                res.status(404).json({ text: 'The user doesn\'t exist' });
             }
         });
     }

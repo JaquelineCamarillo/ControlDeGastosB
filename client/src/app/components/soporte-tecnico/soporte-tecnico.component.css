@@ -1,19 +1,19 @@
 .container h1 {
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
 }
 
 .left {
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
     margin-left: 0%;
 }
 
 .right {
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
 }
 
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
 }
 
 .container {
@@ -72,7 +72,7 @@ body {
 .header nav ul li a {
     color: white;
     text-decoration: none;
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
     font-weight: 600;
 }
 
@@ -193,7 +193,7 @@ body {
     margin-left: -60px; 
     opacity: 0;
     transition: opacity 0.3s;
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
     font-size: small;
 }
 
@@ -228,7 +228,7 @@ li:hover .tooltip {
     margin-left: -60px; 
     opacity: 0;
     transition: opacity 0.3s;
-    font-family: sans-serif;
+    font-family:'Old Standard TT', serif;
     font-size: small;
 }
 
