@@ -24,7 +24,7 @@ body {
 
 .header {
     background-color: #4a4657;
-    color: white;
+    color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,10 +95,10 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 13px 13px 23px rgba(0, 0, 0, 0.4);
-    border: 2px solid #262f57;
+    border: 2px solid #9C7215;
     background: transparent;
     backdrop-filter: blur(10px);
-    background: rgba(125, 111, 248, 0.205);
+    background: transparent(251, 251, 253, 0.205);
     width: 90%;
     margin: 0 auto;
 }
@@ -119,18 +119,20 @@ body {
 }
 
 .expenses-table th, .expenses-table td {
-    border: 1px solid black;
+    border: 1px solid #9C7215;
     padding: 10px;
     text-align: center;
+    
 }
 
 .expenses-table th {
-    background-color: #49454f;
-    color: white;
+    background-color: #9C7215;
+    color: rgb(0, 0, 0);
 }
 
 .expenses-table tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
+    background-color: #000000;
+    color:white;
 }
 
 .expenses-table tbody tr:nth-child(even) {
@@ -167,7 +169,7 @@ body {
 .tooltip {
     visibility: hidden;
     width: 120px;
-    background-color: #5b4e76;
+    background-color: #9C7215;
     color: #fff;
     text-align: center;
     border-radius: 5px;
@@ -191,7 +193,7 @@ body {
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: #5b4e76 transparent transparent transparent;
+    border-color: #9C7215 transparent transparent transparent;
 }
 
 li:hover .tooltip {
@@ -202,7 +204,7 @@ li:hover .tooltip {
 .tooltip {
     visibility: hidden;
     width: 120px;
-    background-color: #5b4e76;
+    background-color: #9C7215;
     color: #fff;
     text-align: center;
     border-radius: 5px;
@@ -226,7 +228,7 @@ li:hover .tooltip {
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: #5b4e76 transparent transparent transparent;
+    border-color: #9C7215 transparent transparent transparent;
 }
 
 li:hover .tooltip {
@@ -256,7 +258,7 @@ li:hover .tooltip {
     position: absolute;
     top: 100px;
     right: 20px;
-    background-color: #3b9c3e71;
+    background-color: #9C7215;
     color: white;
     font-weight: 600;
     padding: 15px;

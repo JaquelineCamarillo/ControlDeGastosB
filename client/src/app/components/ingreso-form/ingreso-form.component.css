@@ -24,7 +24,12 @@ body {
 }
 
 .header {
-    background-color: #4a4657;
+    background: linear-gradient(5deg, 
+    #D8C751,  /* Dorado claro */
+    #C1A60F,  /* Dorado brillante */
+    #B09118,  /* Dorado más oscuro */
+    #F9F772,
+    #9C7215);
     color: white;
     display: flex;
     flex-direction: column;
@@ -38,14 +43,14 @@ body {
 }
 
 .title {
-    background-color: #3c374e;
+    background-color: #B09118;
     width: 100%;
     text-align: center;
     padding: 10px 0;
 }
 
 .header nav {
-    background-color: #4a4657;
+    background-color: #B09118;
     width: 100%;
 }
 
@@ -66,15 +71,15 @@ body {
 }
 
 .header nav ul li a {
-    color: white;
+    color: #B09118;
     text-decoration: none;
     font-family: sans-serif;
     font-weight: 600;
 }
 
 .main-content {
-    background-color: #f1edec;
-    background-image: url('/assets/FondoA.jpg');
+    background-color: #B09118;
+    background-image: url('/assets/gasto_form.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -91,11 +96,11 @@ body {
     max-width: 1100px; 
     margin-top: 20px; 
     padding: 30px; 
-    border: 2px solid #00065a; 
+    border: 2px solid #B09118; 
     border-radius: 5px; 
-    box-shadow: 13px 13px 23px rgba(0, 0, 0, 0.5);
-    border: 2px solid #000b3b6c;
-    background: rgba(125, 111, 248, 0.205);
+    box-shadow: 13px 13px 23px B09118(0, 0, 0, 0.5);
+    border: 2px solid #B09118;
+    background: B09118(125, 111, 248, 0.205);
     backdrop-filter: blur(10px);
     display: grid; 
     grid-template-columns: repeat(3, 1fr); 
@@ -115,13 +120,13 @@ body {
 .form-floating select {
     width: 300px; 
     padding: 10px; 
-    border: 3px solid #ffffff93; 
+    border: 3px solid #B09118; 
     border-radius: 4px; 
     box-sizing: border-box; 
     font-size: 15px; 
     font-family: sans-serif;
     background-color: transparent;
-    color: #000;
+    color: #B09118;
     transition: all 0.2s ease;
 }
 
@@ -130,14 +135,14 @@ body {
     top: 10px;
     left: 10px;
     font-size: 15px;
-    color: #666;
+    color: #B09118;
     pointer-events: none;
     transition: all 0.2s ease;
 }
 
 .form-floating input:focus,
 .form-floating select:focus {
-    border-color: #4a4657;
+    border-color: #B09118;
     outline: none;
 }
 
@@ -148,12 +153,12 @@ body {
     top: -17px;
     left: 0;
     font-size: 14px;
-    color: #4a4657;
+    color: #B09118;
 }
 
 button {
     grid-column: span 3;
-    background-color: #270d0a8e;
+    background-color: #B09118;
     color: #fff2cc;
     border: none; 
     padding: 10px 20px; 
@@ -164,7 +169,7 @@ button {
 }
 
 button:hover {
-    background-color: #00000094; 
+    background-color: #D8C751; 
 }
 
 .info-icon {
@@ -179,7 +184,7 @@ button:hover {
     position: absolute;
     top: -5px;
     left: 25px;
-    background-color: #333;
+    background-color: #B09118;
     color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
@@ -194,7 +199,7 @@ button:hover {
 }
 
 .info-icon i {
-    color: #545dd8;
+    color: #B09118;
     font-size: 1em;
 }
 

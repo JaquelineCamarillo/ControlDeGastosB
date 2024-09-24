@@ -96,7 +96,7 @@ section {
     align-items: center;
     background: transparent;
     backdrop-filter: blur(10px);
-    background: rgba(201, 187, 29, 0.286); 
+    background: transparent(201, 187, 29, 0.286); 
     
 }
 

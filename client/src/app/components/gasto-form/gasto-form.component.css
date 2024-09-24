@@ -79,7 +79,7 @@ body {
 
 .main-content {
     background-color: #f1edec;
-    background-image: url('/assets/FondoA.jpg');
+    background-image: url('/assets/gasto_form.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -96,11 +96,11 @@ body {
     max-width: 1100px; 
     margin-top: 20px; 
     padding: 30px; 
-    border: 2px solid #00065a; 
+    border: 2px solid #9C7215; 
     border-radius: 5px; 
-    box-shadow: 13px 13px 23px rgba(0, 0, 0, 0.5);
-    border: 2px solid #000b3b6c;
-    background: rgba(125, 111, 248, 0.205);
+    box-shadow: 13px 13px 23px #9C7215(0, 0, 0, 0.5);
+    border: 2px solid #9C7215;
+    background: #9C7215(125, 111, 248, 0.205);
     backdrop-filter: blur(10px);
     display: grid; 
     grid-template-columns: repeat(3, 1fr); 
@@ -120,13 +120,13 @@ body {
 .form-floating select {
     width: 300px; 
     padding: 10px; 
-    border: 3px solid #ffffff93; 
+    border: 3px solid #9C7215; 
     border-radius: 4px; 
     box-sizing: border-box; 
     font-size: 15px; 
     font-family: sans-serif;
     background-color: transparent;
-    color: #000;
+    color: #9C7215;
     transition: all 0.2s ease;
 }
 
@@ -135,14 +135,14 @@ body {
     top: 10px;
     left: 10px;
     font-size: 15px;
-    color: #666;
+    color: #9C7215;
     pointer-events: none;
     transition: all 0.2s ease;
 }
 
 .form-floating input:focus,
 .form-floating select:focus {
-    border-color: #4a4657;
+    border-color: #9C7215;
     outline: none;
 }
 
@@ -153,7 +153,7 @@ body {
     top: -17px;
     left: 0;
     font-size: 14px;
-    color: #4a4657;
+    color: #9C7215;
 }
 
 .file-input {
@@ -181,8 +181,8 @@ body {
 
 button {
     grid-column: span 3;
-    background-color: #270d0a8e;
-    color: #fff2cc;
+    background-color: #B09118;
+    color: #000000;
     border: none; 
     padding: 10px 20px; 
     border-radius: 4px; 
@@ -192,7 +192,7 @@ button {
 }
 
 button:hover {
-    background-color: #00000094; 
+    background-color: #D8C751; 
 }
 
 .info-icon {
@@ -207,7 +207,7 @@ button:hover {
     position: absolute;
     top: -5px;
     left: 25px;
-    background-color: #333;
+    background-color: #9C7215;
     color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
@@ -222,7 +222,7 @@ button:hover {
 }
 
 .info-icon i {
-    color: #545dd8;
+    color: #9C7215;
     font-size: 1em;
 }
 
