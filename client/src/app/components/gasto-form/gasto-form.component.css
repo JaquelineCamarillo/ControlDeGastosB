@@ -25,7 +25,7 @@ body {
 
 .header {
     background-color: #4a4657;
-    color: white;
+    color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,19 +33,24 @@ body {
 
 .header nav ul li.right a i {
     margin-right: 5px;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 16px;
 }
 
 .title {
-    background-color: #3c374e;
+    background: linear-gradient(5deg, 
+    #D8C751,  /* Dorado claro */
+    #C1A60F,  /* Dorado brillante */
+    #B09118,  /* Dorado más oscuro */
+    #F9F772,
+    #9C7215);
     width: 100%;
     text-align: center;
     padding: 10px 0;
 }
 
 .header nav {
-    background-color: #4a4657;
+    background-color: #9C7215;
     width: 100%;
 }
 
@@ -66,7 +71,7 @@ body {
 }
 
 .header nav ul li a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-family: sans-serif;
     font-weight: 600;
