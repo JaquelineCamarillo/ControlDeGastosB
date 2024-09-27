@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GastosService } from '../../services/gastos.service';
 import { IngresosService } from '../../services/ingresos.service';
-import { ServiciosService } from '../../services/servicios.service';
 import { Gasto } from '../../models/Gasto';
 import { Ingreso } from '../../models/Ingreso';
-import { Servicio } from '../../models/Servicio';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 
@@ -18,7 +16,6 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 export class ResumenComponent implements OnInit {
   gastos: Gasto[] = [];
   ingresos: Ingreso[] = [];
-  servicios: Servicio[] = [];
   resumen: any[] = [];
   resumenOriginal: any[] = []; // Nueva propiedad para almacenar los datos originales
   IdUsuario: string | null = null;
@@ -26,7 +23,6 @@ export class ResumenComponent implements OnInit {
   constructor(
     private gastoService: GastosService,
     private ingresoService: IngresosService,
-    private servicioService: ServiciosService
   ) {}
 
   ngOnInit(): void {
@@ -135,12 +131,6 @@ export class ResumenComponent implements OnInit {
         console.error('Error fetching ingresos:', error);
       });
 
-      this.servicioService.getServicios(this.IdUsuario).subscribe((data: Servicio[]) => {
-        this.servicios = data;
-        this.addToResumen(this.servicios, 'Servicio');
-      }, error => {
-        console.error('Error fetching servicios:', error);
-      });
     }
   }
 
