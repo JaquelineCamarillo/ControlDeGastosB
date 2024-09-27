@@ -1,0 +1,212 @@
+.container h1 {
+    font-family:'Old Standard TT', serif;
+}
+
+.left {
+    font-family:'Old Standard TT', serif;
+    margin-left: 0%;
+}
+
+.right {
+    font-family:'Old Standard TT', serif;
+}
+
+body {
+    margin: 0;
+    font-family:'Old Standard TT', serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    background-color: #4a4657;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header nav ul li.right a i {
+    margin-right: 5px;
+    color: rgb(2, 2, 2);
+    font-size: 16px;
+}
+
+.title {
+    background: linear-gradient(5deg, 
+    #D8C751,  /* Dorado claro */
+    #C1A60F,  /* Dorado brillante */
+    #B09118,  /* Dorado más oscuro */
+    #F9F772,
+    #9C7215);
+    color:rgb(0, 0, 0);
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.header nav {
+    background-color: #9C7215;
+    width: 100%;
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.header nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-family:'Old Standard TT', serif;
+    font-weight: 600;
+}
+
+.main-content {
+    background-color: #f1edec;
+    background-image:url('/assets/FondoA.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.main-content .white-container {
+    background-color: #fff2cc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 13px 13px 23px rgba(0, 0, 0, 0.4);
+    border: 2px solid #262f57;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    background: rgba(125, 111, 248, 0.205); 
+    width: 90%;
+    margin: 0 auto;
+}
+
+.main-content h1 {
+    margin-top: 0;
+    text-align: center;
+    color: #fff;
+}
+
+.expenses-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+    border-radius: 25px;
+    align-items: center;
+}
+
+.expenses-table th, .expenses-table td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+.expenses-table th {
+    background-color: #49454f;
+    color: white;
+}
+
+.expenses-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.expenses-table tbody tr:nth-child(even) {
+    background-color: #e5e5e5;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
+
+.edit-button {
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.edit-button:hover {
+    background-color: deepskyblue;
+}
+
+@keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+  
+@keyframes slideOutRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+}
+
+.notification {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    background-color: #3b9c3e71;
+    color: white;
+    font-weight: 600;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: slideInRight 0.5s forwards, slideOutRight 0.5s forwards 2.5s;
+}
+
+.floating-window {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    background-color: rgba(3, 0, 46, 0.432); 
+    color: white;
+    font-weight: 600;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: slideInRight 0.5s forwards;
+}
+
+#map {
+    width: 100%;
+    height: 500px; /* Ajusta la altura según lo necesites */ 
+    overflow: hidden;
+    margin: 0; /* Sin márgenes para evitar desplazamiento */
+    padding: 0;
+    }
