@@ -15,10 +15,9 @@ import { GastoFormComponent } from './components/gasto-form/gasto-form.component
 import { GastoListComponent } from './components/gasto-list/gasto-list.component';
 import { IngresoFormComponent } from './components/ingreso-form/ingreso-form.component';
 import { IngresoListComponent } from './components/ingreso-list/ingreso-list.component';
-import { ServicioFormComponent } from './components/servicio-form/servicio-form.component';
-import { ServicioListComponent } from './components/servicio-list/servicio-list.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { ResumenComponent } from './components/resumen/resumen.component';
+import { MapComponent } from './components/map/map.component';
 
 registerLocaleData(localeEs, 'es');
 
@@ -28,13 +27,12 @@ registerLocaleData(localeEs, 'es');
     HomeComponent,
     LoginComponent,
     RegistrarseComponent,
+    MapComponent,
     InicioUsuarioComponent,
     GastoFormComponent,
     GastoListComponent,
     IngresoFormComponent,
     IngresoListComponent,
-    ServicioFormComponent,
-    ServicioListComponent,
     UsuarioComponent,
     ResumenComponent
   ],

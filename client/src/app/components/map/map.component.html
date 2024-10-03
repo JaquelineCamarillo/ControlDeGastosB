@@ -1,0 +1,64 @@
+<!--<!DOCTYPE html>
+<html lang="es">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <body>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+        <div class="container">
+            <header class="header">
+                <div class="title">
+                    <h1>Mapa</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li class="left"><a routerLink="/inicio-usuario">Monedero Inteligente</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main class="main-content">
+                <h1>Mapa de compras</h1>
+                <div class="white-container">
+                    <ng-container *ngIf="isBrowser">
+                        <div id="map" style="height: 100vh; width: 100%;"></div>
+                    </ng-container>
+                    <ng-container *ngIf="!isBrowser">
+                    </ng-container>
+                </div>   
+            </main>    
+        </div> 
+    </body>
+</html>-->
+<!DOCTYPE html>
+<html lang="es">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <body>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <div class="container">
+      <header class="header">
+        <div class="title">
+          <h1>Mapa</h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="left"><a routerLink="/inicio-usuario">Monedero Inteligente</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main class="main-content">
+        <h1>Mapa de compras</h1>
+        <div class="white-container">
+          <ng-container *ngIf="isBrowser">
+            <div id="map" style="height: 100vh; width: 100%;"></div>
+          </ng-container>
+          <ng-container *ngIf="!isBrowser">
+            <p>El mapa no está disponible en este dispositivo.</p>
+          </ng-container>
+        </div>   
+      </main>    
+    </div> 
+  </body>
+</html>
