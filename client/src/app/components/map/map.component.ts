@@ -47,11 +47,12 @@ export class MapComponent implements OnInit {
         this.userLocation = { lat: userLat, lng: userLng };
 
         // Muestra la ubicación del usuario en el mapa
-        this.map.setView([userLat, userLng], 13);
+        this.map.setView([userLat, userLng], 18);
 
         // Agrega un marcador en la ubicación del usuario
+       
         L.marker([userLat, userLng]).addTo(this.map)
-          .bindPopup('Estás aquí!')
+          .bindPopup('Este soy eres tu!!!')
           .openPopup();
 
         // Llamar a la API de Foursquare Places para obtener negocios cercanos
@@ -65,9 +66,9 @@ export class MapComponent implements OnInit {
   }
 
   async getNearbyPlaces(lat: number, lng: number, L: any): Promise<void> {
-    const radius = 3000; // Radio en metros para buscar lugares cercanos
+    const radius = 2000; // Radio en metros para buscar lugares cercanos
     const apiKey = 'fsq3lZIDNaFd8/f0V0u61zwK+4CLDjIULoYVKStQJ3xV+Fk='; 
-    const limit = 20; // Número máximo de lugares a obtener
+    const limit = 50; // Número máximo de lugares a obtener
 
     // Realiza una solicitud a Foursquare Places API para obtener lugares cercanos
     const response = await fetch(`https://api.foursquare.com/v3/places/nearby?ll=${lat},${lng}&radius=${radius}&limit=${limit}`, {
