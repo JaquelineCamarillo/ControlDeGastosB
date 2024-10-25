@@ -18,6 +18,7 @@ import { IngresoListComponent } from './components/ingreso-list/ingreso-list.com
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { ResumenComponent } from './components/resumen/resumen.component';
 import { MapComponent } from './components/map/map.component';
+import { EmailService } from './services/email.service'; 
 
 registerLocaleData(localeEs, 'es');
 
@@ -45,7 +46,8 @@ registerLocaleData(localeEs, 'es');
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es' },
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
+    EmailService 
   ],
   bootstrap: [AppComponent]
 })

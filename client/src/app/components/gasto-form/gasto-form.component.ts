@@ -3,6 +3,7 @@ import { Gasto } from '../../models/Gasto';
 import { GastosService } from '../../services/gastos.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NotificationService } from '../../services/notification.service';
+import { EmailService } from '../../services/email.service';
 
 @Component({
   selector: 'app-gasto-form',
@@ -24,9 +25,11 @@ export class GastoFormComponent implements OnInit {
   gastoId: string | null = '';
   errorMessages: { [key: string]: string } = {};
   idUsuario: string | null = null;
+  emailUsuario: string | null = null; // Variable para almacenar el correo del usuario
 
   constructor(
     private gastosService: GastosService,
+    private emailService: EmailService,
     private router: Router,
     private route: ActivatedRoute,
     private notificationService: NotificationService
@@ -34,6 +37,7 @@ export class GastoFormComponent implements OnInit {
 
   ngOnInit() {
     this.idUsuario = localStorage.getItem('IdUsuario'); 
+    this.emailUsuario = localStorage.getItem('EmailUsuario'); // Obtener el correo del usuario
     this.gastoId = this.route.snapshot.paramMap.get('id');
     this.gasto.FechaTransaccion = new Date().toISOString().split('T')[0];
     if (this.gastoId) {
@@ -82,11 +86,20 @@ export class GastoFormComponent implements OnInit {
 
       this.gasto.Monto = monto.toString();
 
+      const subject = this.isEditMode ? 'Gasto Actualizado' : 'Nuevo Gasto Registrado';
+      const body = `Se ha ${this.isEditMode ? 'actualizado' : 'registrado'} un gasto:\n
+        Descripción: ${this.gasto.Descripcion}\n
+        Categoría: ${this.gasto.Categoria}\n
+        Monto: ${this.gasto.Monto}\n
+        Fecha: ${this.gasto.FechaTransaccion}\n
+        Método de Pago: ${this.gasto.MetodoPago}`;
+
       if (this.isEditMode && this.gastoId) {
         this.gastosService.updateGasto(this.gastoId, this.idUsuario, this.gasto).subscribe(
           res => {
             console.log(res);
             this.notificationService.showNotification('Gasto actualizado correctamente');
+            this.sendEmailNotification(subject, body); // Send email notification
             this.router.navigate(['/gastos/list']);
           },
           err => {
@@ -99,6 +112,7 @@ export class GastoFormComponent implements OnInit {
           res => {
             console.log(res);
             this.notificationService.showNotification('Gasto guardado correctamente');
+            this.sendEmailNotification(subject, body); // Send email notification
             this.router.navigate(['/gastos/list']);
           },
           err => {
@@ -107,6 +121,22 @@ export class GastoFormComponent implements OnInit {
           }
         );
       }
+    }
+  }
+
+  // Helper method to send email notifications
+  private sendEmailNotification(subject: string, body: string) {
+    if (this.emailUsuario) { // Verifica que el correo no sea nulo
+      this.emailService.sendEmail(this.emailUsuario, subject, body).subscribe(
+        res => {
+          console.log('Email sent successfully:', res);
+        },
+        err => {
+          console.log('Error sending email:', err);
+        }
+      );
+    } else {
+      console.log('No se encontró el correo electrónico del usuario.');
     }
   }
 }
