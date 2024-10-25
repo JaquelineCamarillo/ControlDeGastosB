@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { PresupuestosService } from '../../services/presupuestos.service';
 import { Router } from '@angular/router';
+import { FacebookService } from '../../services/facebook.service';
 
 @Component({
   selector: 'app-inicio-usuario',
@@ -15,17 +16,29 @@ export class InicioUsuarioComponent implements OnInit {
   constructor(
     private presupuestosService: PresupuestosService,
     private router: Router,
+    private facebookService: FacebookService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.idUsuario = localStorage.getItem('IdUsuario');
-      if (this.idUsuario) {
-        this.loadPresupuestos();
+      
+      // Si el usuario no está autenticado, intentar autenticarse con Facebook
+      if (!this.idUsuario) {
+        this.facebookService.loginu()
+          .then((authResponse) => {
+            // Guarda el ID de usuario de Facebook en localStorage
+            this.idUsuario = authResponse.userID;
+            localStorage.setItem('IdUsuario', this.idUsuario);
+            this.loadPresupuestos();
+          })
+          .catch(error => {
+            console.error('Usuario no autenticado con Facebook:', error);
+            this.router.navigate(['/login']);
+          });
       } else {
-        console.error('Usuario no autenticado');
-        this.router.navigate(['/login']);
+        this.loadPresupuestos();
       }
     } else {
       console.warn('No se puede acceder a localStorage en el lado del servidor.');
@@ -43,4 +56,4 @@ export class InicioUsuarioComponent implements OnInit {
       );
     }
   }
-  }
+}

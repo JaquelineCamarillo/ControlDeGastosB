@@ -15,7 +15,6 @@
       <nav>
         <ul>
           <li class="left"><a routerLink="/home">Monedero Inteligente</a></li>
-          <li class="right"><a routerLink="/registrarse">Registrarse</a></li>
         </ul>
       </nav>
     </header>
@@ -40,10 +39,16 @@
         <button type="submit" class="custom-btn custom-btn-primary">Entrar</button>
         <div class="error-message" *ngIf="errorMessage">
           <i class="fas fa-exclamation-circle"></i> {{ errorMessage }}
-        </div>
+        </div>   
+        <p><br></p>
+        <button class="custom-btn custom-btn-facebook" (click)="signInWithFacebook()">
+          <i class="fab fa-facebook-f"></i>
+          Iniciar sesión con Facebook
+        </button>
         <div class="links-container">
-          <h5><a routerLink="/registrarse">Registrarse</a></h5>
-          <h5><a routerLink="/recuperar-contrasena">Olvidé mi contraseña</a></h5>
+          <button type="button" class="custom-btn custom-btn-primary" routerLink="/registrarse">
+            Registrarse
+          </button>
         </div>
       </form>
     </main>
