@@ -139,7 +139,7 @@ body {
 .custom-btn {
     width: 100%; 
     background-color: #D8C751;
-    color: white;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -235,7 +235,8 @@ body {
 }
 
 .links-container h5 {
-    margin: 0;
+    text-align: center;
+    margin: 0 auto;
     font-family:'Old Standard TT', serif;
     color: #fff;
 }

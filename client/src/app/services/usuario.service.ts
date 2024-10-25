@@ -9,7 +9,7 @@ import { Usuario } from '../models/Usuario';
 })
 export class UsuarioService {
   private API_URI = 'http://localhost:3000/api/usuario'; // URL del backend
-
+  private userID: string | null = null;
   constructor(private http: HttpClient) { }
 
   getUsuarios(): Observable<Usuario[]> {
@@ -41,4 +41,15 @@ export class UsuarioService {
     }
     return throwError(errorMessage);
   }
+  // Método para guardar el userID
+  setUserID(userID: string) {
+    this.userID = userID;
+  }
+
+  // Método para obtener el userID cuando sea necesario
+  getUserID(): string | null {
+    return this.userID;
+  }
+  
 }
+
