@@ -9,7 +9,7 @@ import { Servicio } from '../models/Servicio';
 })
 export class ServiciosService {
   private API_URI = 'http://localhost:3000/api/servicio';
-
+  
   constructor(private http: HttpClient) { }
 
   getServicios(idUser: string): Observable<Servicio[]> {
@@ -34,5 +34,6 @@ export class ServiciosService {
   updateServicio(id: string, idUser: string, servicio: Servicio): Observable<any> {
     return this.http.put<any>(`${this.API_URI}/${idUser}/${id}`, servicio);
   }
+  
   
 }

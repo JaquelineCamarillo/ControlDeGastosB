@@ -1,8 +1,10 @@
+import { InicioUsuarioComponent } from './../../inicio-usuario/inicio-usuario.component';
 // login.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from '../../../services/usuario.service';
 import { NotificationService } from '../../../services/notification.service';
+import { FacebookService } from '../../../services/facebook.service';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +12,12 @@ import { NotificationService } from '../../../services/notification.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  user:any;
   errorMessage: string | null = null;
   notificationMessage: string | null = null;
 
   constructor(private usuarioService: UsuarioService, private router: Router,
-    private notificationService: NotificationService,) {}
+    private notificationService: NotificationService, private facebookService:FacebookService) {}
 
 
     ngOnInit() {
@@ -51,6 +54,25 @@ export class LoginComponent {
       }
     );
     
+  }  
+
+  // Método para iniciar sesión con Facebook
+  signInWithFacebook() {
+    this.facebookService.loginu()
+      .then((authResponse) => {
+        console.log('Usuario autenticado:', authResponse);
+        const accessToken = authResponse.accessToken; // Obtén el access_token
+        return this.facebookService.getUserData(accessToken); // Pasa el token a getUserData
+      })
+      .then((userData) => {
+        this.user = userData;
+        console.log('Datos del usuario:', this.user);
+        alert('Email del usuario: ' + this.user.email);
+        this.router.navigate(['/inicio-usuario']); // Cambia a la ruta de tu preferencia
+      })
+      .catch((error) => {
+        console.error('Error en el inicio de sesión con Facebook:', error);
+        alert('Error: ' + error);
+      });
   }
-  
 }
