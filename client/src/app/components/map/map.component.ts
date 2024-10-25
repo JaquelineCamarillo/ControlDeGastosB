@@ -45,7 +45,7 @@ export class MapComponent implements OnInit {
         const userLat = position.coords.latitude;
         const userLng = position.coords.longitude;
         this.userLocation = { lat: userLat, lng: userLng };
-<<<<<<< HEAD
+
   
         // Muestra la ubicación del usuario en el mapa con un ícono personalizado
         const userIcon = L.icon({
@@ -57,17 +57,17 @@ export class MapComponent implements OnInit {
   
         L.marker([userLat, userLng], { icon: userIcon }).addTo(this.map)
           .bindPopup('¡Este eres tú!')
-=======
+
 
         // Muestra la ubicación del usuario en el mapa
         this.map.setView([userLat, userLng], 18);
 
-        // Agrega un marcador en la ubicación del usuario
+        /* Agrega un marcador en la ubicación del usuario
        
         L.marker([userLat, userLng]).addTo(this.map)
           .bindPopup('Este soy eres tu!!!')
->>>>>>> 5b1acc97a547591f9558a298b59126eaf3c63be7
-          .openPopup();
+
+          .openPopup();*/
   
         // Llama a la API de Foursquare para obtener lugares cercanos
         await this.getNearbyPlaces(userLat, userLng, L);
@@ -80,19 +80,11 @@ export class MapComponent implements OnInit {
   }
   
   async getNearbyPlaces(lat: number, lng: number, L: any): Promise<void> {
-<<<<<<< HEAD
     const radius = 2000; // Radio de búsqueda
     const apiKey = 'fsq3lZIDNaFd8/f0V0u61zwK+4CLDjIULoYVKStQJ3xV+Fk='; 
     const limit = 50; // Máximo de lugares
   
     // Solicitud a Foursquare API
-=======
-    const radius = 2000; // Radio en metros para buscar lugares cercanos
-    const apiKey = 'fsq3lZIDNaFd8/f0V0u61zwK+4CLDjIULoYVKStQJ3xV+Fk='; 
-    const limit = 50; // Número máximo de lugares a obtener
-
-    // Realiza una solicitud a Foursquare Places API para obtener lugares cercanos
->>>>>>> 5b1acc97a547591f9558a298b59126eaf3c63be7
     const response = await fetch(`https://api.foursquare.com/v3/places/nearby?ll=${lat},${lng}&radius=${radius}&limit=${limit}`, {
       method: 'GET',
       headers: {
