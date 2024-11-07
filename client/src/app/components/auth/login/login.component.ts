@@ -1,5 +1,4 @@
 import { InicioUsuarioComponent } from './../../inicio-usuario/inicio-usuario.component';
-// login.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from '../../../services/usuario.service';

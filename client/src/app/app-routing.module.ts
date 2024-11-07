@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegistrarseComponent } from './components/auth/registrarse/registrarse.component';
@@ -12,6 +11,7 @@ import { IngresoFormComponent } from './components/ingreso-form/ingreso-form.com
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { ResumenComponent } from './components/resumen/resumen.component';
 import { MapComponent } from './components/map/map.component';
+import { TwitchComponent } from './components/twitch/twitch.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, 
@@ -27,7 +27,8 @@ const routes: Routes = [
   { path: 'ingresos/edit/:id', component: IngresoFormComponent },
   { path: 'usuario', component: UsuarioComponent},
   { path: "resumen", component: ResumenComponent},
-  { path: '**', redirectTo: '/' }
+  { path: 'twitch', component: TwitchComponent},
+  { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({

@@ -1,3 +1,4 @@
+import localeEs from '@angular/common/locales/es';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -5,8 +6,6 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { registerLocaleData } from '@angular/common';
-import localeEs from '@angular/common/locales/es';
-
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegistrarseComponent } from './components/auth/registrarse/registrarse.component';
 import { HomeComponent } from './components/home/home.component';
@@ -19,6 +18,8 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 import { ResumenComponent } from './components/resumen/resumen.component';
 import { MapComponent } from './components/map/map.component';
 import { EmailService } from './services/email.service'; 
+import { TwitchComponent } from './components/twitch/twitch.component';
+import { SafeUrlPipe } from './safe-url.pipe';
 
 registerLocaleData(localeEs, 'es');
 
@@ -35,7 +36,9 @@ registerLocaleData(localeEs, 'es');
     IngresoFormComponent,
     IngresoListComponent,
     UsuarioComponent,
-    ResumenComponent
+    ResumenComponent,
+    TwitchComponent,
+    SafeUrlPipe,
   ],
   imports: [
     BrowserModule,

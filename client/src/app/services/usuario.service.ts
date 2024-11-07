@@ -49,7 +49,5 @@ export class UsuarioService {
   // Método para obtener el userID cuando sea necesario
   getUserID(): string | null {
     return this.userID;
-  }
-  
+  } 
 }
-

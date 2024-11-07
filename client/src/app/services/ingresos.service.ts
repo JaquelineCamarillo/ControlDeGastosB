@@ -33,5 +33,4 @@ export class IngresosService {
   updateIngreso(id: string, idUser: string, ingreso: Ingreso): Observable<any> {
     return this.http.put<any>(`${this.API_URI}/${idUser}/${id}`, ingreso);
   }
-  
 }
