@@ -18,7 +18,6 @@ export class ServiciosService {
     );
   }
     
-
   getServicio(id: string, idUser: string): Observable<Servicio> {
     return this.http.get<Servicio>(`${this.API_URI}/${idUser}/${id}`);
   }
@@ -33,7 +32,5 @@ export class ServiciosService {
 
   updateServicio(id: string, idUser: string, servicio: Servicio): Observable<any> {
     return this.http.put<any>(`${this.API_URI}/${idUser}/${id}`, servicio);
-  }
-  
-  
+  }  
 }
