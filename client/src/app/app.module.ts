@@ -20,7 +20,6 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 import { ResumenComponent } from './components/resumen/resumen.component';
 import { MapComponent } from './components/map/map.component';
 import { EmailService } from './services/email.service'; 
-import { YelpService } from './services/yelp.service';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
@@ -54,7 +53,6 @@ registerLocaleData(localeEs, 'es');
     { provide: LOCALE_ID, useValue: 'es' },
     provideHttpClient(withFetch()),
     EmailService,
-    YelpService,
     provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]

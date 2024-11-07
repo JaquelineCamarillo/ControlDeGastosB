@@ -62,7 +62,6 @@ export class InicioUsuarioComponent implements OnInit {
       );
     }
   }
-<<<<<<< HEAD
 
   loadCliengoChatbot() {
     if (!this.isChatbotLoaded && isPlatformBrowser(this.platformId)) {
@@ -73,15 +72,5 @@ export class InicioUsuarioComponent implements OnInit {
       this.isChatbotLoaded = true;  // Evita cargar el script nuevamente
     }
   }
-    /*getChatGPTResponse(message: string): Observable<any> {
-      return this.http.post('https://api.openai.com/v1/chat/completions', {
-        model: 'gpt-4',
-        messages: [{ role: 'user', content: message }],
-      }, {
-        headers: { 'Authorization': `Bearer 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` }
-      });
-    }*/
+    
 }
-=======
-}
->>>>>>> 36e34427531d20e4513fc0bbdc60bfb94b8472ff
