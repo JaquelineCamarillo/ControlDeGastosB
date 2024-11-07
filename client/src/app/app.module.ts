@@ -1,3 +1,4 @@
+import localeEs from '@angular/common/locales/es';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';

@@ -294,3 +294,11 @@ li:hover .tooltip {
     margin-right: 0; 
 }
 
+.twitch-icon {
+    width: 20px; /* Ajusta el tamaño del icono al tamaño deseado */
+    height: 20px;
+    vertical-align: middle; /* Alinea el icono verticalmente */
+    margin-right: 5px; /* Espacio entre el icono y el texto */
+    display: inline-block;
+    filter: brightness(1) invert(0); /* Ajusta para que el ícono sea blanco y negro si lo necesitas */
+}

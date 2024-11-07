@@ -1,0 +1,14 @@
+<div *ngFor="let stream of liveStreams">
+  <h3>{{ stream.user_name }}</h3>
+  <p>Viewers: {{ stream.viewer_count }}</p>
+  
+  <!-- Iframe con URL sanitizada -->
+  <iframe
+    width="720"
+    height="480"
+    [src]="getSafeUrl(stream.user_login)"
+    frameborder="0"
+    allowfullscreen="true">
+  </iframe>
+  <hr>
+</div>

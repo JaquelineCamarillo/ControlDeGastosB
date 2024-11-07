@@ -62,6 +62,7 @@ export class InicioUsuarioComponent implements OnInit {
       );
     }
   }
+<<<<<<< HEAD
 
   loadCliengoChatbot() {
     if (!this.isChatbotLoaded && isPlatformBrowser(this.platformId)) {
@@ -81,3 +82,6 @@ export class InicioUsuarioComponent implements OnInit {
       });
     }*/
 }
+=======
+}
+>>>>>>> 36e34427531d20e4513fc0bbdc60bfb94b8472ff
