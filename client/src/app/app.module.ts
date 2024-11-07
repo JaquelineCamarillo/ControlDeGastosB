@@ -6,6 +6,7 @@ import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegistrarseComponent } from './components/auth/registrarse/registrarse.component';
@@ -19,6 +20,9 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 import { ResumenComponent } from './components/resumen/resumen.component';
 import { MapComponent } from './components/map/map.component';
 import { EmailService } from './services/email.service'; 
+import { YelpService } from './services/yelp.service';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
 
 registerLocaleData(localeEs, 'es');
 
@@ -35,19 +39,23 @@ registerLocaleData(localeEs, 'es');
     IngresoFormComponent,
     IngresoListComponent,
     UsuarioComponent,
-    ResumenComponent
+    ResumenComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatDialogModule,
     ReactiveFormsModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es' },
     provideHttpClient(withFetch()),
-    EmailService 
+    EmailService,
+    YelpService,
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
