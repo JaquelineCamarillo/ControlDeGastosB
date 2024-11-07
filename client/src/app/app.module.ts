@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { registerLocaleData } from '@angular/common';
-import localeEs from '@angular/common/locales/es';
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { LoginComponent } from './components/auth/login/login.component';
