@@ -19,8 +19,7 @@
                           <i class="fas fa-headset"></i>
                           <span class="tooltip">Soporte Técnico</span>
                         </a>
-                      </li>
-                                          
+                      </li>
                     <li class="right">
                         <a routerLink="/resumen">
                             <i class="fas fa-file-alt"></i>
@@ -120,6 +119,20 @@
                 </div>
             </section>
         </main>
+        <footer class="financial-news-section">
+            <h3 class="news-title">Noticias de Financiamiento</h3>
+            <div *ngIf="newsArticles.length > 0; else noNews" class="news-grid">
+              <div *ngFor="let article of newsArticles" class="news-article">
+                <h4>{{ article.title }}</h4>
+                <p>{{ article.description }}</p>
+                <a [href]="article.url" target="_blank">Leer más</a>
+              </div>
+            </div>
+            <ng-template #noNews>
+              <p>No se encontraron noticias sobre financiamiento.</p>
+            </ng-template>
+          </footer>
+          
     </div>
 </body>
 </html>

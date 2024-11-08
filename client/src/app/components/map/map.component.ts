@@ -85,7 +85,6 @@ export class MapComponent implements OnInit {
     const limit = 50; // Máximo de lugares
   
     // Solicitud a Foursquare API
-
     const response = await fetch(`https://api.foursquare.com/v3/places/nearby?ll=${lat},${lng}&radius=${radius}&limit=${limit}`, {
       method: 'GET',
       headers: {

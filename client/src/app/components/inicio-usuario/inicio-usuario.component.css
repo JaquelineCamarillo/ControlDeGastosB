@@ -302,3 +302,83 @@ li:hover .tooltip {
     display: inline-block;
     filter: brightness(1) invert(0); /* Ajusta para que el ícono sea blanco y negro si lo necesitas */
 }
+.news-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #9C7215; /* Blanco para que contraste con el fondo */
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+.financial-news-section {
+    padding: 20px;
+    background: linear-gradient(5deg, 
+    #D8C751,  /* Dorado claro */
+    #C1A60F,  /* Dorado brillante */
+    #B09118,  /* Dorado más oscuro */
+    #F9F772,
+    #9C7215);
+    color: rgb(0, 0, 0); /* Cambia el texto a blanco para que contraste con el fondo azul */
+  }
+  
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las noticias */
+    margin-top: 20px;
+  }
+  
+  .news-article {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .news-article h4 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .news-article p {
+    font-size: 14px;
+    color: #4a4646;
+  }
+  
+  .news-article a {
+    color: #9C7215;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .news-article a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 1200px) {
+    .news-grid {
+      grid-template-columns: repeat(4, 1fr); /* 4 columnas en pantallas medianas */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .news-grid {
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas pequeñas */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .news-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas muy pequeñas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .news-grid {
+      grid-template-columns: 1fr; /* 1 columna en pantallas extra pequeñas */
+    }
+  }
+
+  
