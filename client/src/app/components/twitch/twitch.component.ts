@@ -10,16 +10,19 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class TwitchComponent implements OnInit {
   liveStreams: any[] = [];
-  
+  streamStatus: string = '';
+  streamUrl: SafeResourceUrl | null = null;
+
   constructor(private twitchService: TwitchService, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
     this.getStreams();
+    this.verificarStream('loredo_31');
   }
 
   // Llama al servicio para obtener los streams en vivo
   getStreams() {
-    const gameId = '33214'; 
+    const gameId = '2008869745'; 
     this.twitchService.getStreams(gameId).subscribe(
       (response: any) => {
         this.liveStreams = response.data;
@@ -36,5 +39,19 @@ export class TwitchComponent implements OnInit {
     const url = `https://player.twitch.tv/?channel=${channelName}&parent=localhost`; // Reemplaza 'localhost' con el dominio correcto si no es 'localhost'
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }  
+
+  verificarStream(username: string): void {
+    this.twitchService.getStreamStatus(username).subscribe(response => {
+      if (response.data.length > 0) {
+        console.log('El usuario está en vivo', response.data);
+        this.streamUrl = this.getSafeUrl(username);
+      } else {
+        console.log('El usuario no está en vivo');
+      }
+    }, error => {
+      this.streamStatus = 'Error al obtener el estado del stream';
+      console.error('Error al obtener el estado del stream', error);
+    });
+  }
 }
 
