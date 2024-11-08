@@ -53,7 +53,7 @@ CREATE TABLE Gasto (
     Categoria VARCHAR(30) NOT NULL,
     Monto DECIMAL(10, 2) NOT NULL,
     FechaTransaccion DATETIME NOT NULL,
-    MetodoPago ARCHAR(50) NOT NULL,
+    MetodoPago VARCHAR(50) NOT NULL,
     Comprobante VARCHAR(100),
     FOREIGN KEY (IdUsuario) REFERENCES Usuario(IdUsuario)
 );
