@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../../services/usuario.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-usuario',
@@ -10,10 +11,13 @@ export class UsuarioComponent implements OnInit {
 
   usuario: any = null;
   errorMessage: string | null = null;
+  userData: any=null;
 
-  constructor(private UsuarioService: UsuarioService) {}
+  constructor(private UsuarioService: UsuarioService,private userService:UserService) {}
 
-  ngOnInit() {
+  ngOnInit(): void{
+
+    this.userData= this.userService.getUserData();
     const idUsuario = localStorage.getItem('IdUsuario');
 
     if (idUsuario) {

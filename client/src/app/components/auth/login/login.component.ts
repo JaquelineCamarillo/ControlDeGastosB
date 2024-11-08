@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UsuarioService } from '../../../services/usuario.service';
 import { NotificationService } from '../../../services/notification.service';
 import { FacebookService } from '../../../services/facebook.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent {
   notificationMessage: string | null = null;
 
   constructor(private usuarioService: UsuarioService, private router: Router,
-    private notificationService: NotificationService, private facebookService:FacebookService) {}
+    private notificationService: NotificationService, private facebookService:FacebookService,
+    private userService: UserService) {}
 
 
     ngOnInit() {
@@ -66,6 +68,7 @@ export class LoginComponent {
       .then((userData) => {
         this.user = userData;
         console.log('Datos del usuario:', this.user);
+        this.userService.setUserData(this.user);
         alert('Email del usuario: ' + this.user.email);
         this.router.navigate(['/inicio-usuario']); // Cambia a la ruta de tu preferencia
       })

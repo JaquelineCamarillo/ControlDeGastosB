@@ -1,4 +1,31 @@
-<!DOCTYPE html>
+<div class="profile-container" *ngIf="userData; else noData">
+    <div class="profile-card">
+      <div class="profile-header">
+        <img
+          *ngIf="userData.profilePicture; else defaultImage"
+          [src]="userData.profilePicture"
+          alt="{{ userData.name }}"
+          class="profile-picture"
+        />
+        <ng-template #defaultImage>
+          <img src="https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png" alt="Imagen predeterminada" class="profile-picture" />
+        </ng-template>
+        <h2 class="profile-name">{{ userData.name }}</h2>
+      </div>
+      <div class="profile-details">
+        <p><strong>Correo Electrónico:</strong> {{ userData.email }}</p>
+        <p><strong>ID:</strong> {{ userData.id }}</p>
+        <!-- Añade más propiedades según lo que contenga userData -->
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #noData>
+    <div class="loading">
+      <p>No se encontraron datos de usuario.</p>
+    </div>
+  </ng-template>
+<!--<!DOCTYPE html>
 <html lang="es">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -22,14 +49,14 @@
                 <div class="perfil-usuario-header">
                     <div class="perfil-usuario-portada">
                         <div class="perfil-usuario-avatar">
-                            <!-- Enlaza la imagen del usuario -->
+                            <!-- Enlaza la imagen del usuario 
                             <img [src]="usuario?.avatarUrl || 'https://image.freepik.com/icones-gratis/usuario-icone-do-perfil_318-33925.jpg'" alt="img-avatar">
                         </div>
                     </div>
                 </div>
                 <div class="perfil-usuario-body">
                     <div class="perfil-usuario-bio">
-                        <!-- Enlaza el nombre y la biografía del usuario -->
+                        <!-- Enlaza el nombre y la biografía del usuario 
                         <h3 class="titulo">{{ usuario.Nombre + ' ' + usuario.ApPaterno + ' ' + usuario.ApMaterno|| 'Nombre del Usuario' }}</h3>
                         
                     </div>
@@ -48,4 +75,4 @@
         </main>
     </div>
 </body>
-</html>
+</html> -->

@@ -1,3 +1,22 @@
+<div *ngIf="streamStatus">
+  <p>{{ streamStatus }}</p>
+</div>
+
+<!-- Mostrar el iframe solo si el usuario está en vivo -->
+<div *ngIf="streamUrl">
+  <iframe 
+    [src]="streamUrl" 
+    width="720" 
+    height="480" 
+    frameborder="0" 
+    allowfullscreen="true">
+  </iframe>
+</div>
+
+<div *ngFor="let stream of liveStreams">
+  <h3>{{ stream.user_name }}</h3>
+  <p>Viewers: {{ stream.viewer_count }}</p>
+
 <div *ngFor="let stream of liveStreams">
   <h3>{{ stream.user_name }}</h3>
   <p>Viewers: {{ stream.viewer_count }}</p>
