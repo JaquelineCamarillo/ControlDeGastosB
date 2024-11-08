@@ -1,33 +1,134 @@
-<div *ngIf="streamStatus">
-  <p>{{ streamStatus }}</p>
-</div>
+<!--<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.awesome-markers/2.0.4/leaflet.awesome-markers.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.awesome-markers/2.0.4/leaflet.awesome-markers.js"></script>
+<html lang="es">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <body>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <div class="container">
+      <header class="header">
+        <div class="title">
+          <h1>Twitch</h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="left"><a routerLink="/inicio-usuario">Monedero Inteligente</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div *ngIf="streamStatus">
+        <p>{{ streamStatus }}</p>
+      </div>
+      
+      <!-- Mostrar el iframe solo si el usuario está en vivo --
+      <div *ngIf="streamUrl">
+        <iframe 
+          [src]="streamUrl" 
+          width="720" 
+          height="480" 
+          frameborder="0" 
+          allowfullscreen="true">
+        </iframe>
+      </div>
+      
+      <div *ngFor="let stream of liveStreams">
+        <h3>{{ stream.user_name }}</h3>
+        <p>Viewers: {{ stream.viewer_count }}</p>
+      
+      <div *ngFor="let stream of liveStreams">
+        <h3>{{ stream.user_name }}</h3>
+        <p>Viewers: {{ stream.viewer_count }}</p>
+        
+        <!-- Iframe con URL sanitizada --
+        <iframe
+          width="720"
+          height="480"
+          [src]="getSafeUrl(stream.user_login)"
+          frameborder="0"
+          allowfullscreen="true">
+        </iframe>
+        <hr>
+      </div>
+    </div> 
+  </body>
+</html>-->
 
-<!-- Mostrar el iframe solo si el usuario está en vivo -->
-<div *ngIf="streamUrl">
-  <iframe 
-    [src]="streamUrl" 
-    width="720" 
-    height="480" 
-    frameborder="0" 
-    allowfullscreen="true">
-  </iframe>
-</div>
 
-<div *ngFor="let stream of liveStreams">
-  <h3>{{ stream.user_name }}</h3>
-  <p>Viewers: {{ stream.viewer_count }}</p>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transmisiones en Twitch</title>
+    
+    <!-- CSS de Leaflet y Awesome Markers -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.awesome-markers/2.0.4/leaflet.awesome-markers.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    
+    <!-- Script de Leaflet Awesome Markers -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.awesome-markers/2.0.4/leaflet.awesome-markers.js"></script>
+  </head>
 
-<div *ngFor="let stream of liveStreams">
-  <h3>{{ stream.user_name }}</h3>
-  <p>Viewers: {{ stream.viewer_count }}</p>
-  
-  <!-- Iframe con URL sanitizada -->
-  <iframe
-    width="720"
-    height="480"
-    [src]="getSafeUrl(stream.user_login)"
-    frameborder="0"
-    allowfullscreen="true">
-  </iframe>
-  <hr>
-</div>
+  <body>
+    <div class="container">
+      <!-- Header con título y navegación -->
+      <header class="header">
+        <div class="title">
+          <h1>Twitch</h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="left"><a routerLink="/inicio-usuario">Monedero Inteligente</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Mostrar estado de la transmisión -->
+      <div *ngIf="streamStatus">
+        <p>{{ streamStatus }}</p>
+      </div>
+
+      <!-- Mostrar iframe si el usuario está en vivo -->
+      <div *ngIf="streamUrl">
+        <iframe
+          [src]="streamUrl"
+          width="720"
+          height="480"
+          frameborder="0"
+          allowfullscreen="true"
+        ></iframe>
+      </div>
+
+      <!-- Iterar sobre las transmisiones en vivo y mostrar información -->
+      <div *ngFor="let stream of liveStreams">
+        <h3>{{ stream.user_name }}</h3>
+        <p>Espectadores: {{ stream.viewer_count }}</p>
+
+        <!-- Iframe para cada transmisión con URL sanitizada -->
+        <iframe
+          width="720"
+          height="480"
+          [src]="getSafeUrl(stream.user_login)"
+          frameborder="0"
+          allowfullscreen="true"
+        ></iframe>
+        <hr />
+      </div>
+    </div>
+  </body>
+</html>
