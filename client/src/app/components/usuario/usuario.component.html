@@ -1,30 +1,66 @@
-<div class="profile-container" *ngIf="userData; else noData">
-    <div class="profile-card">
-      <div class="profile-header">
-        <img
-          *ngIf="userData.profilePicture; else defaultImage"
-          [src]="userData.profilePicture"
-          alt="{{ userData.name }}"
-          class="profile-picture"
-        />
-        <ng-template #defaultImage>
-          <img src="https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png" alt="Imagen predeterminada" class="profile-picture" />
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="title">
+                <h1>Perfil de Usuario</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="left"><a routerLink="/inicio-usuario">Monedero Inteligente</a></li>
+                    <!-- Botones juntos en el lado derecho -->
+                    <li class="right"><a routerLink="/inicio-usuario">Regresar</a></li>
+                    <li class="right"><a routerLink="/home">Cerrar sesión</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Contenido del perfil de usuario -->
+        <div *ngIf="userData; else noData">
+            <div>
+                <div>
+                    <!-- Imagen de perfil con opción predeterminada -->
+                    <img
+                        *ngIf="userData.profilePicture; else defaultImage"
+                        [src]="userData.profilePicture"
+                        alt="{{ userData.name }}"
+                    />
+                    <ng-template #defaultImage>
+                        <img src="https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png" alt="Imagen predeterminada" />
+                    </ng-template>
+                    <h2>{{ userData.name || (userData.Nombre + ' ' + userData.ApPaterno + ' ' + userData.ApMaterno) }}</h2>
+                </div>
+
+                <div>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> Correo Electrónico: {{ userData.email || userData.Correo || 'No disponible' }}</li>
+                        <li><i class="fas fa-phone-alt"></i> Teléfono: {{ userData.phone || userData.NumTelefono || 'No disponible' }}</li>
+                        <li><i class="fas fa-calendar-alt"></i> Fecha de Nacimiento: {{ userData.birthday || userData.FechaNacimiento || 'No disponible' }}</li>
+                        <li><i class="fas fa-user"></i> Usuario: {{ userData.username || userData.Usuario || 'No disponible' }}</li>
+                        <li><i class="fas fa-id-badge"></i> ID: {{ userData.id || 'No disponible' }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mensaje en caso de no encontrar datos -->
+        <ng-template #noData>
+            <div>
+                <p>No se encontraron datos de usuario.</p>
+            </div>
         </ng-template>
-        <h2 class="profile-name">{{ userData.name }}</h2>
-      </div>
-      <div class="profile-details">
-        <p><strong>Correo Electrónico:</strong> {{ userData.email }}</p>
-        <p><strong>ID:</strong> {{ userData.id }}</p>
-        <!-- Añade más propiedades según lo que contenga userData -->
-      </div>
     </div>
-  </div>
-  
-  <ng-template #noData>
-    <div class="loading">
-      <p>No se encontraron datos de usuario.</p>
-    </div>
-  </ng-template>
+</body>
+</html>
+
+
 <!--<!DOCTYPE html>
 <html lang="es">
 <head>
